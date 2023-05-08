@@ -23,15 +23,21 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final int DEFAULT_INTERVAL = 30;
     public static final int FAST_INTERVAL = 3;
+
     public static final int PERMISION_FINE_LOCATION = 99;
+
+
     TextView tv_lat, tv_lon, tv_altitude, tv_accuracy, tv_speed, tv_sensor, tv_updates, tv_address;
     Switch sw_locationupdates, sw_gps;
     // Location request
@@ -42,10 +48,14 @@ public class MainActivity extends AppCompatActivity {
     FusedLocationProviderClient fusedLocationProviderClient;
     LocationCallback locationCallback;
 
+    private final FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // FireStore DB
 
         // event trigger when the update interval is met
         locationCallback = new LocationCallback(){
@@ -153,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(Location location) {
                     updateUIValues(location);
+                    updateDBLocation(location);
                 }
             });
         } else {
@@ -183,9 +194,21 @@ public class MainActivity extends AppCompatActivity {
             List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(),1);
             tv_address.setText(addresses.get(0).getAddressLine(0));
         } catch(Exception e){
-            tv_address.setText("can access de location street");
+            tv_address.setText("can't access the location street");
         }
 
+    }
+
+    private  void updateDBLocation(Location location){
+
+        double[] geoPos = {
+                location.getLatitude(),
+                location.getLongitude()
+        };
+
+        Map<String, Object> docData = new HashMap<>();
+        docData.put("location",geoPos);
+        db.collection("location").document().set(docData);
     }
 
 }
