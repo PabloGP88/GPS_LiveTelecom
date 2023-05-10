@@ -1,11 +1,14 @@
 package com.example.gps_test;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -13,6 +16,7 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +26,11 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.IOException;
@@ -40,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView tv_lat, tv_lon, tv_altitude, tv_accuracy, tv_speed, tv_sensor, tv_updates, tv_address;
     Switch sw_locationupdates, sw_gps;
+    Button btn_menu;
     // Location request
 
     boolean updateOn = false;
@@ -47,8 +56,7 @@ public class MainActivity extends AppCompatActivity {
     LocationRequest locationRequest;
     FusedLocationProviderClient fusedLocationProviderClient;
     LocationCallback locationCallback;
-
-    private final FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // FireStore DB
-
         // event trigger when the update interval is met
         locationCallback = new LocationCallback(){
 
@@ -77,12 +84,12 @@ public class MainActivity extends AppCompatActivity {
         tv_address = findViewById(R.id.tv_address);
         sw_locationupdates = findViewById(R.id.sw_locationsupdates);
         sw_gps = findViewById(R.id.sw_gps);
-
+        btn_menu = findViewById(R.id.menu);
 
         // set properties LocationRequest
         locationRequest = new LocationRequest();
-        locationRequest.setInterval(1000 * DEFAULT_INTERVAL);
-        locationRequest.setFastestInterval(1000 * FAST_INTERVAL);
+        locationRequest.setInterval(100 * DEFAULT_INTERVAL);
+        locationRequest.setFastestInterval(100 * FAST_INTERVAL);
 
         locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
 
@@ -113,6 +120,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+// Create a new user with a first and last name
+               /* Map<String, Object> user = new HashMap<>();
+                user.put("first", "Ada");
+                user.put("last", "Lovelace");
+                user.put("born", 1815);
+
+// Add a new document with a generated ID
+                db.collection("users")
+                        .add(user)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                               Toast.makeText(getApplicationContext(),"exito",Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(getApplicationContext(),"mamo",Toast.LENGTH_SHORT).show();
+                            }
+                        });*/
+                startActivity(new Intent(MainActivity.this, MenuActivity.class));
+            }
+        });
+
         updateGPS();
         //------------------------------- END NETHOD LISTENER SW_GOS -------------------------------
     }
@@ -134,12 +169,10 @@ public class MainActivity extends AppCompatActivity {
 
         // if to check if permission to gps has been given
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-            tv_updates.setText("Location being track");
-            fusedLocationProviderClient.requestLocationUpdates(locationRequest,locationCallback,null);
-            updateGPS();
-        } else {
-            Toast.makeText(this, "This app requires permission to be granted in order to work properly", Toast.LENGTH_SHORT).show();
+            fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, null);
         }
+             tv_updates.setText("Location being track");
+            updateGPS();
     }
 
     @Override
@@ -163,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(Location location) {
                     updateUIValues(location);
-                    updateDBLocation(location);
+                    //updateDBLocation(location);
                 }
             });
         } else {
@@ -199,16 +232,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private  void updateDBLocation(Location location){
+    private  void updateDBLocation(Location location) {
+        Map<String,Object> map = new HashMap<>();
+        double latitude = location.getLatitude();
+        double longitude = location.getLongitude();
 
-        double[] geoPos = {
-                location.getLatitude(),
-                location.getLongitude()
-        };
+        map.put("latitude",latitude);
+        map.put("longitude",longitude);
 
-        Map<String, Object> docData = new HashMap<>();
-        docData.put("location",geoPos);
-        db.collection("location").document().set(docData);
     }
-
 }

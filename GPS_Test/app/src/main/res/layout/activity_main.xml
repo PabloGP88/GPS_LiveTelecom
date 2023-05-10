@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/WhiteBackground"
     tools:context=".MainActivity">
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_labellat"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -16,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@id/tv_lat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,6 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_labellon"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -34,6 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_labellat" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_lon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,6 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_lat" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_labelaltitude"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -52,6 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_labellon" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_altitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,6 +67,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_labelaltitude" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_labelaccuracy"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -69,6 +77,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_labelaltitude" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_accuracy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,6 +86,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_labelaccuracy" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_labelspeed"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -86,6 +96,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_labelaccuracy" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -94,6 +105,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_labelspeed" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_labelsensor"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -103,6 +115,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sw_gps" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_sensor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -111,6 +124,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_labelsensor" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_labelupdates"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -119,6 +133,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sw_locationsupdates" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_updates"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -127,6 +142,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_labelupdates" />
 
     <Switch
+        android:textColor="@color/black"
         android:id="@+id/sw_locationsupdates"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -135,9 +151,11 @@
         android:text="Location Updates"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Switch
+        android:textColor="@color/black"
         android:id="@+id/sw_gps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -145,9 +163,11 @@
         android:text="GPS/SavePower"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_labelupdates" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelupdates"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -155,6 +175,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_lbladdress" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_lbladdress"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -164,6 +185,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_labelspeed" />
 
     <View
+        android:textColor="@color/black"
         android:id="@+id/divider"
         android:layout_width="409dp"
         android:layout_height="1dp"
@@ -171,5 +193,18 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_address" />
+
+    <Button
+        android:background="@color/LiveGreen"
+        android:id="@+id/menu"
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+        android:text="Menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
