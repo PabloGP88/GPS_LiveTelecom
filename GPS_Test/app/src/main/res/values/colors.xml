@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="WhiteBackground">#fffff6</color>
     <color name="LiveGreen">#2A9748</color>
+    <color name="LiveGreenLighter">#4BBD6A</color>
 </resources>
