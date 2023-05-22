@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="WhiteBackground">#fffff6</color>
-    <color name="LiveGreen">#2A9748</color>
-    <color name="LiveGreenLighter">#4BBD6A</color>
+    <color name="LiveGreen">#0C7454</color>
+    <color name="LiveGreenLighter">#39AA88</color>
+    <color name="LiveBlue">#276D94</color>
 </resources>

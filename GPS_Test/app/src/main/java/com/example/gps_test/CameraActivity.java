@@ -45,7 +45,7 @@ public class CameraActivity extends AppCompatActivity {
     public static final int CAMERA_NORMAL_REQUEST_CODE = 103;
     // public static final int GALLERY_REQUEST_CODE = 105;
 
-    Button go_menu,camera,createPDF;
+    Button camera,createPDF;
     ImageView selectedImage;
 
     String currentPhotoPath;
@@ -61,7 +61,6 @@ public class CameraActivity extends AppCompatActivity {
 
         // ------------------------------ Define variables -----------------------------------------
 
-        go_menu = findViewById(R.id.goMenu);
         camera = findViewById(R.id.cameraBtn);
         createPDF = findViewById(R.id.createPDF);
 
@@ -76,12 +75,6 @@ public class CameraActivity extends AppCompatActivity {
         }
 
         // ----------------------------------- Listeners --------------------------------------------
-            go_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(CameraActivity.this, MenuActivity.class));
-            }
-        });
 
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -214,7 +207,7 @@ public class CameraActivity extends AppCompatActivity {
         Canvas canvas = pagina1.getCanvas();
 
         Bitmap bitmapScale;
-        bitmapScale = Bitmap.createScaledBitmap(bitmap,200,200,false);
+        bitmapScale = Bitmap.createScaledBitmap(bitmap,600,600,false);
         canvas.drawBitmap(bitmapScale,300,40,paint);
 
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -227,7 +220,7 @@ public class CameraActivity extends AppCompatActivity {
 
         pdfDocument.finishPage(pagina1);
 
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "Test.pdf");
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "Test.pdf");
         try {
             pdfDocument.writeTo(new FileOutputStream(file));
             Toast.makeText(getApplicationContext(),"Se creo piola",Toast.LENGTH_LONG).show();
