@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.GPS_Test" parent="Theme.AppCompat.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/LiveGreen</item>
+        <item name="colorPrimaryVariant">@color/LiveGreen</item>
+        <item name="colorOnPrimary">@color/LiveGreen</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondary">@color/LiveBlue</item>
+        <item name="colorSecondaryVariant">@color/LiveBlue</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>

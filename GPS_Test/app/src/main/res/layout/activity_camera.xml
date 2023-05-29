@@ -7,12 +7,12 @@
     android:background="@color/WhiteBackground">
 
     <ImageView
-        android:id="@+id/imageCamera"
+        android:id="@+id/imageRadio"
         android:layout_width="166dp"
         android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.341"
@@ -20,12 +20,12 @@
         tools:srcCompat="@drawable/ic_launcher_background" />
 
     <ImageView
-        android:id="@+id/imageCamera12"
+        android:id="@+id/imageMastil"
         android:layout_width="165dp"
         android:layout_height="81dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintHorizontal_bias="0.995"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.48"
@@ -33,12 +33,12 @@
         tools:srcCompat="@drawable/ic_launcher_background" />
 
     <ImageView
-        android:id="@+id/imageCamera13"
+        android:id="@+id/imageDobleMastil"
         android:layout_width="164dp"
         android:layout_height="77dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.935"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.622"
@@ -46,12 +46,12 @@
         tools:srcCompat="@drawable/ic_launcher_background" />
 
     <ImageView
-        android:id="@+id/imageCamera14"
+        android:id="@+id/imageBase"
         android:layout_width="162dp"
         android:layout_height="87dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.77"
@@ -59,12 +59,12 @@
         tools:srcCompat="@drawable/ic_launcher_background" />
 
     <ImageView
-        android:id="@+id/imageCamera16"
+        android:id="@+id/imageRouter"
         android:layout_width="162dp"
         android:layout_height="87dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.935"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.917"
@@ -72,7 +72,7 @@
         tools:srcCompat="@drawable/ic_launcher_background" />
 
     <Button
-        android:id="@+id/cameraBtn"
+        android:id="@+id/cameraBtn_radio"
         android:layout_width="91dp"
         android:layout_height="31dp"
         android:background="@drawable/round_btn_3"
@@ -87,7 +87,7 @@
         app:layout_constraintVertical_bias="0.037" />
 
     <Button
-        android:id="@+id/cameraBtn2"
+        android:id="@+id/cameraBtn_mastil"
         android:layout_width="91dp"
         android:layout_height="31dp"
         android:layout_marginTop="16dp"
@@ -103,7 +103,7 @@
         app:layout_constraintVertical_bias="0.002" />
 
     <Button
-        android:id="@+id/cameraBtn4"
+        android:id="@+id/cameraBtn_doble_mastil"
         android:layout_width="37dp"
         android:layout_height="33dp"
         android:background="@drawable/round_btn_3"
@@ -117,7 +117,7 @@
         app:layout_constraintVertical_bias="0.647" />
 
     <Button
-        android:id="@+id/cameraBtn6"
+        android:id="@+id/cameraBtn_base"
         android:layout_width="37dp"
         android:layout_height="33dp"
         android:background="@drawable/round_btn_3"
@@ -170,7 +170,7 @@
         app:srcCompat="@drawable/live" />
 
     <Button
-        android:id="@+id/cameraBtn3"
+        android:id="@+id/cameraBtn_router"
         android:layout_width="91dp"
         android:layout_height="31dp"
         android:background="@drawable/round_btn_3"
@@ -275,48 +275,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.828" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName8"
-        android:layout_width="148dp"
-        android:layout_height="48dp"
-        android:background="#E4E4E4"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Descripción metodo de pago"
-        android:textAlignment="center"
-        android:textColor="#717171"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.039" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName9"
-        android:layout_width="145dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="144dp"
-        android:background="#E4E4E4"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Descripción metodo de pago"
-        android:textAlignment="center"
-        android:textColor="#717171"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.769" />
-
     <Switch
-        android:id="@+id/switch2"
+        android:id="@+id/switch_doble_mastil"
         android:layout_width="45dp"
         android:layout_height="24dp"
-        android:checked="true"
+        android:checked="false"
         android:showText="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -327,9 +290,10 @@
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Switch
-        android:id="@+id/switch3"
+        android:id="@+id/switch_base"
         android:layout_width="45dp"
         android:layout_height="24dp"
+        android:checked="false"
         android:showText="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -338,7 +302,48 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.704"
         tools:checked="true"
-        tools:ignore="UseSwitchCompatOrMaterialXml"
-        />
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <EditText
+        android:id="@+id/descriptionMastil"
+        android:layout_width="147dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:background="#E6E6E6"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Descripción metodo y forma de pago"
+        android:inputType="textMultiLine"
+        android:text="aaa"
+        android:textColor="#989898"
+        android:textColorHint="#989898"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <EditText
+        android:id="@+id/descriptionBase"
+        android:layout_width="147dp"
+        android:layout_height="45dp"
+        android:background="#E6E6E6"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Descripción metodo y forma de pago"
+        android:inputType="textMultiLine"
+        android:textColor="#989898"
+        android:textColorHint="#989898"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.733" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
